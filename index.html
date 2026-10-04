@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diario de Estudio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Diario de Estudio</h1>
+      <div class="streaks">
+        <div class="streak" id="streak">
+          <span class="streak-fire">🔥</span>
+          <span class="streak-number" id="streak-number">0</span>
+          <span class="streak-label">días</span>
+        </div>
+        <div class="streak streak-best" id="best-streak">
+          <span class="streak-fire">🏆</span>
+          <span class="streak-number" id="best-streak-number">0</span>
+          <span class="streak-label">mejor</span>
+        </div>
+        <div class="streak streak-week" id="week-streak">
+          <span class="streak-fire">📊</span>
+          <span class="streak-number" id="week-minutes-number">0</span>
+          <span class="streak-label">semana</span>
+        </div>
+        <div class="streak streak-month" id="month-streak">
+          <span class="streak-fire">📅</span>
+          <span class="streak-number" id="month-days-number">0</span>
+          <span class="streak-label">mes</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="card form-card">
+      <h2>Nueva sesión</h2>
+      <form id="session-form">
+        <div class="field">
+          <label for="date">Fecha</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="field">
+          <label for="topic">Tema</label>
+          <input type="text" id="topic" name="topic" placeholder="Ej: JavaScript, React, Algoritmos..." required maxlength="100">
+        </div>
+        <div class="field">
+          <label for="minutes">Minutos</label>
+          <input type="number" id="minutes" name="minutes" min="1" placeholder="Ej: 45" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar sesión</button>
+      </form>
+    </section>
+
+    <section class="card list-card">
+      <h2>Sesiones</h2>
+      <ul id="sessions-list" class="sessions-list"></ul>
+      <p id="empty-message" class="empty-message hidden">Aún no hay sesiones. ¡Añade la primera arriba!</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
