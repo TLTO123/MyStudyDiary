@@ -34,6 +34,31 @@
       </div>
     </header>
 
+    <section class="card heatmap-card" id="heatmap-card">
+      <div class="heatmap-header">
+        <h2>Mapa de calor</h2>
+        <fieldset class="heatmap-range" id="heatmap-range" role="radiogroup" aria-label="Semanas a mostrar">
+          <legend class="visually-hidden">Semanas a mostrar</legend>
+          <label><input type="radio" name="heatmap-semanas" value="4"> 4</label>
+          <label><input type="radio" name="heatmap-semanas" value="12" checked> 12</label>
+          <label><input type="radio" name="heatmap-semanas" value="26"> 26</label>
+          <label><input type="radio" name="heatmap-semanas" value="52"> 52</label>
+        </fieldset>
+      </div>
+
+      <div class="heatmap-container" id="heatmap-container" role="grid" aria-label="Mapa de calor de actividad, semanas horizontales, días verticales">
+        <div class="heatmap-labels" id="heatmap-labels" aria-hidden="true">
+          <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+        </div>
+        <div class="heatmap-grid" id="heatmap-grid"></div>
+      </div>
+
+      <div class="heatmap-empty hidden" id="heatmap-empty">
+        <p>Aún no hay datos para el mapa de calor</p>
+        <button type="button" id="heatmap-empty-btn">Añade tu primera sesión</button>
+      </div>
+    </section>
+
     <section class="card form-card">
       <h2>Nueva sesión</h2>
       <form id="session-form">
@@ -58,6 +83,24 @@
       <ul id="sessions-list" class="sessions-list"></ul>
       <p id="empty-message" class="empty-message hidden">Aún no hay sesiones. ¡Añade la primera arriba!</p>
     </section>
+
+    <!-- Modal día -->
+    <div class="modal hidden" id="day-modal" role="dialog" aria-modal="true" aria-labelledby="day-modal-title">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <header class="modal-header">
+          <h3 id="day-modal-title">Detalle del día</h3>
+          <button type="button" class="modal-close" aria-label="Cerrar">×</button>
+        </header>
+        <div class="modal-body">
+          <p class="day-date" id="day-modal-date"></p>
+          <p class="day-total" id="day-modal-total"></p>
+          <ul class="day-sessions" id="day-modal-sessions"></ul>
+          <p class="day-empty hidden" id="day-modal-empty">Sin sesiones ese día</p>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <script src="app.js"></script>
