@@ -1,5 +1,6 @@
 .agents/
 .opencode/
+docs/
 AGENTS.md
 MEMORY.md
 opencode.json
